@@ -9,7 +9,8 @@ module.exports = function(grunt) {
         dest: 'public/dist/builtClient.js',
       },
       lib: {
-        src: ['public/lib/*.js'],
+        src: ['public/lib/jquery.js', 'public/lib/underscore.js', 
+              'public/lib/backbone.js', 'public/lib/handlebars.js'],
         dest: 'public/dist/builtLib.js',
       },
     },
