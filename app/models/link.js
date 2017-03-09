@@ -1,5 +1,10 @@
 var db = require('../config');
+var db2 = require('../../db/shortly-mongoose');
 var crypto = require('crypto');
+
+
+// db.link
+module.exports = db2.link;
 
 var Link = db.Model.extend({
   tableName: 'urls',
@@ -16,4 +21,4 @@ var Link = db.Model.extend({
   }
 });
 
-module.exports = Link;
+// module.exports = Link;
