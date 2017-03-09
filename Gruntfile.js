@@ -45,6 +45,7 @@ module.exports = function(grunt) {
         'public/dist/builtClient.js'
         // 'app/models/link.js'
         // Add list of files to lint here
+        // test comment for building
       ]
     },
 
