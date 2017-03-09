@@ -2,13 +2,15 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
     pkg: grunt.file.readJSON('package.json'),
+
     concat: {
-      options: {
-        separator: ';',
-      },
-      dist: {
+      client: {
         src: ['public/client/*.js'],
-        dest: 'public/dist/built.js',
+        dest: 'public/dist/builtClient.js',
+      },
+      lib: {
+        src: ['public/lib/*.js'],
+        dest: 'public/dist/builtLib.js',
       },
     },
 
@@ -30,19 +32,31 @@ module.exports = function(grunt) {
     uglify: {
       my_target: {
         files: {
-          'public/dist/output.min.js': ['public/dist/built.js']
+          'public/dist/client.min.js': ['public/dist/builtClient.js'],
+          'public/dist/lib.min.js': ['public/dist/builtLib.js'],
+
         }
       }
     },
 
     eslint: {
       target: [
-        'built.js'
+        'public/dist/builtClient.js'
+        // 'app/models/link.js'
         // Add list of files to lint here
       ]
     },
 
     cssmin: {
+      target: {
+        files: [{
+          expand: true,
+          cwd: 'public',
+          src: ['*.css', '!*.min.css'],
+          dest: 'public',
+          ext: '.min.css'
+        }]
+      }
     },
 
     watch: {
