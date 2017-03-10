@@ -3,7 +3,7 @@ var express = require('express');
 var expect = require('chai').expect;
 var app = require('../server-config.js');
 
-var db = require('../app/config');
+var db = require('../db/shortly-mongoose.js');
 var User = require('../app/models/user.js');
 var Link = require('../app/models/link.js');
 

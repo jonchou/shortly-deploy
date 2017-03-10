@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 // var autoIncrement = require('mongoose-auto-increment');
+mongoose.Promise = require('bluebird');
 
 mongoose.connect('mongodb://localhost/shortlydb');
 

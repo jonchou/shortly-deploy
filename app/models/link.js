@@ -1,6 +1,9 @@
 var mongoose = require('mongoose');
 var crypto = require('crypto');
 
+mongoose.Promise = require('bluebird');
+
+
 var linkSchema = mongoose.Schema({
   url: String,
   baseUrl: String,
